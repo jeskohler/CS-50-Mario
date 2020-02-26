@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <unistd.h>
+
+int main(void)
+{
+int myrow;
+int spaces;
+int hashies;
+int height;
+    // prompts user for pyramid height between 1 and 7
+    do {
+        height = get_int("height: ");
+        printf("Please specify the height of the pyramid: \n");
+       }
+    while ((height < 0 || height > 8));
+ 
+    // Worst 12 hours ever -- rows, spaces, hashies
+
+for (myrow = 1; myrow <= height; myrow++)
+{
+    for (spaces = (height - myrow); spaces > 0; spaces--)
+    {
+       printf(" ");
+    }
+        for (hashies = 2; hashies <= (myrow + 1); hashies++)
+    {
+        printf ("#");
+    }
+
+printf ("\n");
+}
+        return 0; 
+}
+
